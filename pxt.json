@@ -1,0 +1,18 @@
+{
+    "name": "WSJoyStick",
+    "version": "0.0.0",
+    "description": "Waveshare electronic",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "WSJoyStick.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false
+}
