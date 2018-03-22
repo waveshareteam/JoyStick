@@ -62,21 +62,8 @@ namespace WSJoyStick {
         Read_Y = pins.analogReadPin(JoyStick_Y);
     }
 
-    /**
-     * Plays a tone through pin ``P0`` for the given duration.
-     * @param frequency pitch of the tone to play in Hertz (Hz)
-     * @param ms tone duration in milliseconds (ms)
-     */
-    //% help=music/play-tone weight=90
-    //% blockId=PlayMusic block="Play |Music %note=device_note|for %duration=device_beat" blockGap=8
-    //% parts="headphone"
-    //% useEnumVal=1
-    export function PlayMusic(frequency: number, ms: number): void {
-        pins.analogPitch(frequency, ms);
-    }
-
     //% blockId==Listen_Key block="Key %pin |Press"
-    //% weight=100
+    //% weight=90
     export function Listen_Key(pin: KEY): boolean {
         let Val = 2;
 
@@ -107,7 +94,7 @@ namespace WSJoyStick {
     }
 
     //% blockId==onKey block="Key %pin |Press"
-    //% weight=100
+    //% weight=80
     export function onKey(pin: KEY, body: Action): void {
         let Pin = 0;
 
@@ -131,7 +118,7 @@ namespace WSJoyStick {
     }
 
     //% blockId==Listen_Dir block="DIR Dir %pin "
-    //% weight=100
+    //% weight=70
     export function Listen_Dir(Dir: DIR): boolean {
         let Get_Dir = DIR.NONE;
 
@@ -175,4 +162,18 @@ namespace WSJoyStick {
             return false;
         }
     }
+	
+	/**
+     * Plays a tone through pin ``P0`` for the given duration.
+     * @param frequency pitch of the tone to play in Hertz (Hz)
+     * @param ms tone duration in milliseconds (ms)
+     */
+    //% help=music/play-tone weight=60
+    //% blockId=PlayMusic block="Play |Music %note=device_note|for %duration=device_beat" blockGap=8
+    //% parts="headphone"
+    //% useEnumVal=1
+    export function PlayMusic(frequency: number, ms: number): void {
+        pins.analogPitch(frequency, ms);
+    }
+	
 }
